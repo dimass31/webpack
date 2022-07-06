@@ -22,21 +22,21 @@ CORS(app)
 @app.route('/<num>')
 def index(num):
     articles = Article()
-    art_list = articles.listen()[::-1]
+    # art_list = articles.listen()[::-1]
 
-    len_post = len(art_list)
+    # len_post = len(art_list)
 
-    num = int(num)*5
+    # num = int(num)*5
 
-    if len_post<num:
-        art_list = art_list[len(art_list)//5*5:]
-    else:
-        art_list = art_list[num//5-1:num]
+    # if len_post<num:
+    #     art_list = art_list[len(art_list)//5*5:]
+    # else:
+    #     art_list = art_list[num//5-1:num]
         
-    r = jsonify({"art_list": art_list, "len_post": len_post})
+    # r = jsonify({"art_list": art_list, "len_post": len_post})
     #response = make_response(r)
     #response.headers["Referrer-Policy"] = 'no-referrer'
-    return r
+    return jsonify({"1": 1})
 
 @app.route('/post/<id>')
 def post(id):
@@ -219,4 +219,4 @@ def get_image(id):
 
 @app.route('/')
 def hello_world():
-    return 'Hello World5!'
+    return 'Hello World6!'
