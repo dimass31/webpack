@@ -1,5 +1,5 @@
-# from flask import Flask, jsonify, make_response, request, render_template, send_file
-# from flask_cors import CORS
+from flask import Flask, jsonify, make_response, request, render_template, send_file
+from flask_cors import CORS
 
 # import base64
 # from bson.objectid import ObjectId
@@ -16,8 +16,8 @@
 # from sendMail import sendmail
 
 
-# app = Flask(__name__)
-# CORS(app)
+app = Flask(__name__)
+CORS(app)
 
 # @app.route('/<num>')
 # def index(num):
@@ -217,10 +217,6 @@
 # #app.run(debug=True)
 
 
-from flask import Flask
-
-app = Flask(__name__)
-
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return 'Hello World2!'
