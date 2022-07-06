@@ -1,17 +1,17 @@
 from flask import Flask, jsonify, make_response, request, render_template, send_file
 from flask_cors import CORS
 
-# import base64
-# from bson.objectid import ObjectId
-# import io
+import base64
+from bson.objectid import ObjectId
+import io
 
-# from db import Article
-# from db import Landing
-# from db import User
-# from db import Playlist
-# from db import Track
-# from db import Festival
-# from db import Storyteller
+from db import Article
+from db import Landing
+from db import User
+from db import Playlist
+from db import Track
+from db import Festival
+from db import Storyteller
 
 # from sendMail import sendmail
 
@@ -19,24 +19,24 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# @app.route('/<num>')
-# def index(num):
-#     articles = Article()
-#     art_list = articles.listen()[::-1]
+@app.route('/<num>')
+def index(num):
+    articles = Article()
+    art_list = articles.listen()[::-1]
 
-#     len_post = len(art_list)
+    len_post = len(art_list)
 
-#     num = int(num)*5
+    num = int(num)*5
 
-#     if len_post<num:
-#         art_list = art_list[len(art_list)//5*5:]
-#     else:
-#         art_list = art_list[num//5-1:num]
+    if len_post<num:
+        art_list = art_list[len(art_list)//5*5:]
+    else:
+        art_list = art_list[num//5-1:num]
         
-#     r = jsonify({"art_list": art_list, "len_post": len_post})
-#     response = make_response(r)
-#     response.headers["Referrer-Policy"] = 'no-referrer'
-#     return response
+    r = jsonify({"art_list": art_list, "len_post": len_post})
+    response = make_response(r)
+    response.headers["Referrer-Policy"] = 'no-referrer'
+    return response
 
 # @app.route('/post/<id>')
 # def post(id):
@@ -219,4 +219,4 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World2!'
+    return 'Hello World3!'
