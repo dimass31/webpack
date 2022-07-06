@@ -34,9 +34,9 @@ def index(num):
         art_list = art_list[num//5-1:num]
         
     r = jsonify({"art_list": art_list, "len_post": len_post})
-    response = make_response(r)
-    response.headers["Referrer-Policy"] = 'no-referrer'
-    return response
+    #response = make_response(r)
+    #response.headers["Referrer-Policy"] = 'no-referrer'
+    return r
 
 @app.route('/post/<id>')
 def post(id):
@@ -219,4 +219,4 @@ def get_image(id):
 
 @app.route('/')
 def hello_world():
-    return 'Hello World4!'
+    return 'Hello World5!'
