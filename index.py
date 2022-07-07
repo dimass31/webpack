@@ -24,19 +24,19 @@ def index(num):
     articles = Article()
     art_list = articles.listen()[::-1]
 
-    # len_post = len(art_list)
+    len_post = len(art_list)
 
-    # num = int(num)*5
+    num = int(num)*3
 
-    # if len_post<num:
-    #     art_list = art_list[len(art_list)//5*5:]
-    # else:
-    #     art_list = art_list[num//5-1:num]
+    if len_post<num:
+        art_list = art_list[len(art_list)//3*3:]
+    else:
+        art_list = art_list[num//3-1:num]
         
-    # r = jsonify({"art_list": art_list, "len_post": len_post})
+    r = jsonify({"art_list": art_list, "len_post": len_post})
     #response = make_response(r)
     #response.headers["Referrer-Policy"] = 'no-referrer'
-    return jsonify({"1": art_list[0]})
+    return r
 
 @app.route('/post/<id>')
 def post(id):
